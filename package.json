@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mr-optimizer/doctor_appointment.git"
+    "url": "git+https://github.com/ravi-2422/BookMyDoc.git"
   },
-  "author": "Shubham Kumar",
+  "author": "Ravi Ranjan Kumar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mr-optimizer/doctor_appointment/issues"
+    "url": "https://github.com/ravi-2422/BookMyDoc/issues"
   },
-  "homepage": "https://github.com/mr-optimizer/doctor_appointment#readme",
+  "homepage": "https://github.com/ravi-2422/BookMyDoc#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
