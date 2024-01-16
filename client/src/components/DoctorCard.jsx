@@ -21,6 +21,10 @@ function DoctorCard({ doctor }) {
         {doctor.address}
       </p>
       <p>
+        <b>Specialization : </b>
+        {doctor.specialization}
+      </p>
+      <p>
         <b>Fee per Visit : </b>
         {doctor.feePerConsultation}
       </p>

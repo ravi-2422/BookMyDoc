@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../components/Layout";
 import { hideLoading, showLoading } from "../../redux/alertSlice";
 import axios from "axios";
 import { Table } from "antd";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 function UserList() {
   const [users, setUsers] = useState([]);
+  const {user} = useSelector((user)=>user.user);
   const dispatch = useDispatch();
+  const nevigate = useNavigate();
   const getUsersData = async () => {
     try {
       dispatch(showLoading());
@@ -28,8 +31,11 @@ function UserList() {
 
   useEffect(() => {
     getUsersData();
+    if(user?.isAdmin === false){
+      nevigate("/");
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   const columns = [
     {

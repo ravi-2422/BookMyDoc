@@ -25,11 +25,11 @@ const Layout = (props) => {
       path: "/apply-doctor",
       icon: "ri-hospital-line",
     },
-    {
-      name: "Profile",
-      path: `/profile/`,
-      icon: "ri-user-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: `/profile/`,
+    //   icon: "ri-user-line",
+    // },
   ];
 
   const doctorMenu = [
@@ -43,11 +43,11 @@ const Layout = (props) => {
       path: "/doctor/appointments",
       icon: "ri-file-list-line",
     },
-    {
-      name: "Profile",
-      path: `/doctor/profile/${user?._id}`,
-      icon: "ri-user-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: `/doctor/profile/${user?._id}`,
+    //   icon: "ri-user-line",
+    // },
   ];
 
   const adminMenu = [
@@ -66,11 +66,11 @@ const Layout = (props) => {
       path: "/admin/doctor-list",
       icon: "ri-user-star-line",
     },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "ri-user-line",
-    },
+    // {
+    //   name: "Profile",
+    //   path: "/profile",
+    //   icon: "ri-user-line",
+    // },
   ];
   const menuToBeRendered = user?.isAdmin
     ? adminMenu

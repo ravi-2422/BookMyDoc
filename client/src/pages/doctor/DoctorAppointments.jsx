@@ -88,15 +88,17 @@ function DoctorAppointments() {
         <div className="d-flex">
           {record.status === "pending" && (
             <div className="d-flex">
-              <h1
+              <h1 
+              // style={{color: "green"}}
                 className="anchor px-2"
                 onClick={() => changeAppointmentStatus(record, "approved")}
               >
-                Approve
+                Approve &nbsp;
               </h1>
               <h1
                 className="anchor"
                 onClick={() => changeAppointmentStatus(record, "rejected")}
+                // style={{color: "red"}}
               >
                 Reject
               </h1>
