@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://bookmydoc-1vrx.onrender.com"
+  "proxy": "http://localhost:8000"
 }
