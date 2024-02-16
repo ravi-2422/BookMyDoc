@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { hideLoading, showLoading } from "../redux/alertSlice";
 import { setUser } from "../redux/userSlice";
-
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 function Notifications() {
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function Notifications() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/mark-all-notifications-as-seen",
+        `${url}/api/user/mark-all-notifications-as-seen`,
         { userId: user._id },
         {
           headers: {
@@ -41,7 +42,7 @@ function Notifications() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/delete-all-seen-notifications",
+        `${url}/api/user/delete-all-seen-notifications`,
         { userId: user._id },
         {
           headers: {

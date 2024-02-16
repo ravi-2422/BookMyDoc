@@ -6,6 +6,8 @@ import axios from "axios";
 import { Table } from "antd";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -15,7 +17,7 @@ function UserList() {
   const getUsersData = async () => {
     try {
       dispatch(showLoading());
-      const response = await axios.get("/api/admin/get-all-users", {
+      const response = await axios.get(`${url}/api/admin/get-all-users`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

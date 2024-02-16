@@ -7,7 +7,8 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 // import moment from "moment";
-
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 function BookAppointment() {
   const [isAvailable, setIsAvailable] = useState(false);
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ function BookAppointment() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/get-doctor-info-by-id",
+        `${url}/api/doctor/get-doctor-info-by-id`,
         {
           doctorId: params.id,
         },
@@ -62,7 +63,7 @@ function BookAppointment() {
       }
       const fTime = sh + ":" + sm;
       const response = await axios.post(
-        "/api/user/check-booking-availability",
+        `${url}/api/user/check-booking-availability`,
         {
           doctorId: params.id,
           date: fDate,
@@ -107,7 +108,7 @@ function BookAppointment() {
       }
       const fTime = sh + ":" + sm;
       const response = await axios.post(
-        "/api/user/book-appointment",
+        `${url}/api/user/book-appointment`,
         {
           doctorId: params.id,
           userId: user._id,

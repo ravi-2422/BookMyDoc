@@ -5,6 +5,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { hideLoading, showLoading } from "../redux/alertSlice";
+const url = "http://localhost:8000";
+
 const ProtectedRoutes = (props) => {
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const ProtectedRoutes = (props) => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/get-user-info-by-id",
+        `${url}/api/user/get-user-info-by-id`,
         {
           token: localStorage.getItem("token"),
         },

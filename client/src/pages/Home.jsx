@@ -7,7 +7,8 @@ import Doctor from "./../components/DoctorCard";
 // import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "./../redux/alertSlice";
-
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 function Home() {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function Home() {
     try {
       dispatch(showLoading());
       const token = localStorage.getItem("token");
-      const response = await axios.get("/api/user/get-all-approved-doctors", {
+      const response = await axios.get(`${url}/api/user/get-all-approved-doctors`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

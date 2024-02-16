@@ -6,6 +6,8 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { Table } from "antd";
 // import moment from "moment";
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 
 function DoctorAppointments() {
   const [appointments, setAppointments] = useState([]);
@@ -14,7 +16,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "/api/doctor/get-appointments-by-doctor-id",
+        `${url}/api/doctor/get-appointments-by-doctor-id`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +36,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/change-appointment-status",
+        `${url}/api/doctor/change-appointment-status`,
         { appointmentId : record._id, status: status },
         {
           headers: {

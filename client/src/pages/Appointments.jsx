@@ -6,7 +6,8 @@ import { showLoading, hideLoading } from "../redux/alertSlice";
 import axios from "axios";
 import { Table } from "antd";
 // import moment from "moment";
-
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 function Appointments() {
   const [appointments, setAppointments] = useState([]);
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function Appointments() {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "/api/user/get-appointments-by-user-id",
+        `${url}/api/user/get-appointments-by-user-id`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

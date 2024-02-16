@@ -5,13 +5,15 @@ import { useDispatch } from "react-redux";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { hideLoading, showLoading } from "../redux/alertSlice";
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = async(value) => {
     try {
       dispatch(showLoading());
-      const response = await axios.post("/api/user/register", value);
+      const response = await axios.post(`${url}/api/user/register`, value);
       dispatch(hideLoading());
       if(response.data.success) {
         toast.success(response.data.message);

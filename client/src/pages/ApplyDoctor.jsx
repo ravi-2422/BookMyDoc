@@ -7,7 +7,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import DoctorForm from "../components/DoctorForm";
 // import moment from "moment";
-
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 function ApplyDoctor() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
@@ -44,7 +45,7 @@ function ApplyDoctor() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/apply-doctor-account",
+        `${url}/api/user/apply-doctor-account`,
         {
           ...values,
           userId: user._id,

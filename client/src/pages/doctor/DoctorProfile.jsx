@@ -7,7 +7,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import DoctorForm from "../../components/DoctorForm";
 // import moment from "moment";
-
+// const url = "http://localhost:8000";
+const url = 'https://bookmydoc-1vrx.onrender.com';
 function DoctorProfile() {
   const { user } = useSelector((state) => state.user);
   const params = useParams();
@@ -46,7 +47,7 @@ function DoctorProfile() {
       let eTime = eh + ":" + em;
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/update-doctor-profile",
+        `${url}/api/doctor/update-doctor-profile`,
         {
           ...values,
           userId: user._id,
@@ -77,7 +78,7 @@ function DoctorProfile() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/get-doctor-info-by-user-id",
+        `${url}/api/doctor/get-doctor-info-by-user-id`,
         {
           userId: params.id,
         },
