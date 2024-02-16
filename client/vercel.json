@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://bookmydoc-1vrx.onrender.com/api/:path*"
+      }
+    ]
+  }
+  
