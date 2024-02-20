@@ -8,7 +8,7 @@ function DoctorCard({ doctor }) {
   return (
     <div
       className="card cursor-pointer"
-      onClick={() => navigate(`/book-appointment/${doctor._id}`)}
+      onClick={() => navigate(`${url}/book-appointment/${doctor._id}`)}
     >
       <h1 className="card-title">
         {doctor.firstName} {doctor.lastName}

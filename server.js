@@ -6,6 +6,17 @@ app.use(express.json());
 require("dotenv").config({ path: './config/.env' });
 app.use(cors());
 
+const allowedOrigins = [
+    "https://book-my-doc-one.vercel.app",
+    "http://localhost:3000",
+  ];
+  app.use(
+    cors({
+      origin: allowedOrigins,
+      credentials: true,
+    })
+  );
+
 //connecting to database
 connectDatabase();
 
