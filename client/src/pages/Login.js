@@ -13,7 +13,13 @@ const Login = () => {
   const onFinish = async(value) => {
     try {
       dispatch(showLoading());
-      const response = await axios.post(`${url}/api/user/login`, value);
+      const config = {
+        headers: {
+          "content-type": "application/json",
+        },
+        withCredentials: true,
+      };
+      const response = await axios.post(`${url}/api/user/login`, value, config);
       dispatch(hideLoading());
       if(response.data.success) {
         toast.success(response.data.message);
