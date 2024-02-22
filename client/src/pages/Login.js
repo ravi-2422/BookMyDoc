@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { hideLoading, showLoading } from "../redux/alertSlice";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
+//console.log(url);
 //const url = "http://localhost:8000";
 const Login = () => {
   const dispatch = useDispatch();

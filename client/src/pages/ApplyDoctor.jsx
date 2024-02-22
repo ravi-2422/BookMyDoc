@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import DoctorForm from "../components/DoctorForm";
 // import moment from "moment";
 // const url = "http://localhost:8000";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
 function ApplyDoctor() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);

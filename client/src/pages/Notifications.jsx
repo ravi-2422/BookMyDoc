@@ -8,7 +8,7 @@ import Layout from "../components/Layout";
 import { hideLoading, showLoading } from "../redux/alertSlice";
 import { setUser } from "../redux/userSlice";
 // const url = "http://localhost:8000";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
 function Notifications() {
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();

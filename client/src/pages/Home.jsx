@@ -8,7 +8,7 @@ import Doctor from "./../components/DoctorCard";
 import { useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "./../redux/alertSlice";
 // const url = "http://localhost:8000";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
 function Home() {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
