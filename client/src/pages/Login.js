@@ -15,9 +15,9 @@ const Login = () => {
     try {
       dispatch(showLoading());
       const config = {
-        // headers: {
-        //   "content-type": "application/json",
-        // },
+        headers: {
+          "content-type": "application/json",
+        },
         withCredentials: true,
       };
       const response = await axios.post(`${url}/api/user/login`, value, config);
