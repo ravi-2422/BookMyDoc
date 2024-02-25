@@ -5,8 +5,10 @@ import { useDispatch } from "react-redux";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { hideLoading, showLoading } from "../redux/alertSlice";
-// const url = "http://localhost:8000";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
+
+//const url = 'https://bookmydoc-1vrx.onrender.com';
+//console.log(url);
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // const url = "http://localhost:8000";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
 
 function DoctorCard({ doctor }) {
   const navigate = useNavigate();

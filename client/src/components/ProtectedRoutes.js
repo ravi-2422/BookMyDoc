@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { hideLoading, showLoading } from "../redux/alertSlice";
-const url = "http://localhost:8000";
+const url = process.env.REACT_APP_BACKEND_URL;
 
 const ProtectedRoutes = (props) => {
   const { user } = useSelector((state) => state.user);

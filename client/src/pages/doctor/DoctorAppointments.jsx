@@ -7,7 +7,7 @@ import axios from "axios";
 import { Table } from "antd";
 // import moment from "moment";
 // const url = "http://localhost:8000";
-const url = 'https://bookmydoc-1vrx.onrender.com';
+const url = process.env.REACT_APP_BACKEND_URL;
 
 function DoctorAppointments() {
   const [appointments, setAppointments] = useState([]);

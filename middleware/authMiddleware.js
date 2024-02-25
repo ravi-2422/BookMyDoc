@@ -13,11 +13,11 @@ exports.authMiddleware = async (req, res, next) => {
           .json({ message: "Token is not valid", success: false });
       } else {
         req.body.userId = decoded.id;
-        res.header(
-          "Access-Control-Allow-Origin",
-          "https://book-my-doc-one.vercel.app",
-          "http://localhost:3000"
-        );
+        // res.header(
+        //   "Access-Control-Allow-Origin",
+        //   "https://book-my-doc-one.vercel.app",
+        //   "http://localhost:3000"
+        // );
         
         next();
       }
