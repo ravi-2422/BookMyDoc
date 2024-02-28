@@ -8,12 +8,13 @@ require("dotenv").config({ path: './config/.env' });
 
 const allowedOrigins = [
     "https://book-my-doc-one.vercel.app",
+    "https://bookmydoc-testing.onrender.com",
     "http://localhost:3000",
   ];
   app.use(
     cors({
       origin: allowedOrigins,
-      methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
+      methods: ['GET','PUT','PATCH','POST','DELETE'],
       credentials: true,
     })
   );

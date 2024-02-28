@@ -55,7 +55,7 @@ exports.loginUser = async (req, res) => {
         const token = await jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
         expiresIn: process.env.TOKEN_EXPIRY,
       });
-      res.header("Access-Control-Allow-Origin", "https://book-my-doc-one.vercel.app", "http://localhost:3000");
+      res.header("Access-Control-Allow-Origin", "https://book-my-doc-one.vercel.app","https://bookmydoc-testing.onrender.com", "http://localhost:3000");
       res
         .status(200)
         .send({ message: "Login successful", success: true, token });

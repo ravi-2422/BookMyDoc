@@ -16,6 +16,7 @@ exports.authMiddleware = async (req, res, next) => {
         res.header(
           "Access-Control-Allow-Origin",
           "https://book-my-doc-one.vercel.app",
+          "https://bookmydoc-testing.onrender.com",
           "http://localhost:3000"
         );
         
